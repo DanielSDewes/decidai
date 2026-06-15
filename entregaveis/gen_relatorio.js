@@ -45,7 +45,7 @@ function cell(text, w, { head = false, align = AlignmentType.LEFT } = {}) {
     })],
   });
 }
-function table(headersRow, dataRows, widths) {
+function table(headersRow, dataRows, widths, leftAll = false) {
   const rows = [new TableRow({
     tableHeader: true,
     children: headersRow.map((h, i) => cell(h, widths[i], { head: true })),
@@ -53,7 +53,7 @@ function table(headersRow, dataRows, widths) {
   for (const r of dataRows) {
     rows.push(new TableRow({
       children: r.map((c, i) => cell(String(c), widths[i],
-        { align: i === 0 ? AlignmentType.LEFT : AlignmentType.RIGHT })),
+        { align: (leftAll || i === 0) ? AlignmentType.LEFT : AlignmentType.RIGHT })),
     }));
   }
   return new Table({ width: { size: CONTENT, type: WidthType.DXA }, columnWidths: widths, rows });
@@ -327,6 +327,28 @@ const doc = new Document({
         bullet("Incluir a alocação a clientes/centros de distribuição no modelo de otimização."),
         bullet("Migrar para programação estocástica de dois estágios para decidir sob incerteza explícita."),
         bullet("Integrar o SAD ao ERP da empresa para execução automática semanal."),
+
+        // ===== 6 — Divisão de Tarefas =====
+        H1("6. Divisão de Tarefas"),
+        P([
+          new TextRun("O desenvolvimento foi organizado por camadas da arquitetura: cada integrante respondeu por um eixo técnico do pipeline, com integração contínua entre as partes."),
+        ]),
+        table(
+          ["Integrante", "Responsabilidades principais", "Artefatos"],
+          [
+            ["Daniel Dewes", "Camada de dados e previsão (ML); orquestração do pipeline ponta a ponta", "data_gen.py, forecast.py, pipeline.py"],
+            ["Cesario Stoquero", "Tratamento da incerteza (Monte Carlo + Markov) e otimização (Simplex); análise de sensibilidade", "simulation.py, optimization.py"],
+            ["Samuel Maciel", "Explicabilidade (XAI) e interface executiva (dashboard Streamlit)", "xai.py, app/dashboard.py"],
+          ],
+          [2200, 4400, 2426],
+          true,
+        ),
+        P([
+          new TextRun("A "), B("redação do relatório"), new TextRun(", a "),
+          B("preparação da apresentação"), new TextRun(" e a "),
+          B("revisão dos resultados"),
+          new TextRun(" foram conduzidas em conjunto pelos três integrantes."),
+        ]),
       ],
     },
   ],
