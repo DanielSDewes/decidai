@@ -96,7 +96,7 @@ const doc = new Document({
           children: [new TextRun({ text: "IA no Processo Decisório — Relatório Técnico", italics: true, size: 24 })] }),
         new Paragraph({ spacing: { before: 1800, after: 60 }, alignment: AlignmentType.CENTER,
           children: [B("Integrantes do grupo:")] }),
-        P([new TextRun("Daniel Dewes  •  Cesario Stoquero  •  Samuel Maciel")], { center: true }),
+        P([new TextRun("Daniel Dewes  •  Cesario Stoquero  •  Samuel Maciel •  Guilherme Capeletti")], { center: true }),
         new Paragraph({ spacing: { before: 1200 }, alignment: AlignmentType.CENTER,
           children: [new TextRun("Santo Ângelo — RS, junho de 2026")] }),
         new Paragraph({ children: [new PageBreak()] }),

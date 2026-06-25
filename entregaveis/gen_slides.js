@@ -54,7 +54,7 @@ s.addText("IA no Processo Decisório — Entrega Executiva ao Comitê de Decisã
   x: M, y: 4.45, w: 10, h: 0.5, fontFace: BODYF, fontSize: 16, italic: true, color: GOLD, margin: 0 });
 s.addText([
   { text: "Integrantes: ", options: { bold: true } },
-  { text: "Daniel Dewes  ·  Cesario Stoquero  ·  Samuel Maciel" },
+  { text: "Daniel Dewes  ·  Cesario Stoquero  ·  Samuel Maciel ·  Guilherme Capeletti" },
 ], { x: M, y: 6.3, w: 11, h: 0.4, fontFace: BODYF, fontSize: 14, color: WHITE, margin: 0 });
 s.addText("Santo Ângelo — RS · junho de 2026", {
   x: M, y: 6.75, w: 11, h: 0.4, fontFace: BODYF, fontSize: 13, color: ICE, margin: 0 });
