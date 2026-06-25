@@ -99,11 +99,6 @@ const doc = new Document({
         P([new TextRun("Daniel Dewes  •  Cesario Stoquero  •  Samuel Maciel •  Guilherme Capeletti")], { center: true }),
         new Paragraph({ spacing: { before: 1200 }, alignment: AlignmentType.CENTER,
           children: [new TextRun("Santo Ângelo — RS, junho de 2026")] }),
-        new Paragraph({ children: [new PageBreak()] }),
-        // ---- Sumário ----
-        new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun("Sumário")] }),
-        new TableOfContents("Sumário", { hyperlink: true, headingStyleRange: "1-2" }),
-        new Paragraph({ children: [new PageBreak()] }),
       ],
     },
     // ---- Corpo ----
